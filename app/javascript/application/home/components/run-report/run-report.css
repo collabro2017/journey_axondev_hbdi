@@ -1,0 +1,86 @@
+@import "../../styles.css";
+
+p {
+  padding: 10px;
+}
+
+p, button, select {
+  font-size: 1rem;
+  color: black;
+  text-align: left;
+}
+
+.blueBG {
+  background-color: #E4F6FD;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+option {
+  width: 150px;
+  border: 1px solid black;
+}
+
+button {
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 2px solid;
+  border-color: #214263;
+  color: #214263;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  min-width: 130px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+button:hover {
+  border-color: #214263;
+  color: white;
+  background-color: #214263;
+}
+
+select {
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.goal {
+  background-color: #EEE;
+  border-radius: 3px;
+  max-width: 90px;
+  min-height: 90px;
+  padding: 5px;
+  margin: 10px;
+  font-size: 0.92rem;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  color: #808080
+}
+
+.goal svg {
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+}
+
+input[type="checkbox"]:checked+label {
+  color: #214263;
+  font-weight: bold;
+}
+
+h3 {
+    color: #214263;
+}

@@ -1,0 +1,5 @@
+controllers/connections/visible_connection.connection_events[approved]:
+  event: approved
+  connection: controllers/connections/visible_connection
+  initiated_by_id: <%= uuid('controllers/connections/john_doe') %>
+  initiated_by_type: Thinker

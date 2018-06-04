@@ -1,0 +1,12 @@
+- name: push to docker
+  type: push
+  service: connect
+  registry: https://246000647945.dkr.ecr.us-west-2.amazonaws.com
+  image_name: 246000647945.dkr.ecr.us-west-2.amazonaws.com/axon/connect
+  image_tag: "{{.Branch}}"
+  dockercfg_service: awsGenerator
+  tag: ^(development|sandbox|master)
+- name: deploy newly built container
+  service: deployment
+  command: ./deploy.sh
+  tag: ^(development|sandbox)

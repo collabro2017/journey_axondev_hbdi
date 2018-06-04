@@ -1,0 +1,24 @@
+:import("axon-brand/css/variables.css"){
+  hmBlue: hmBlue;
+  hmRed: hmRed;
+  hmGreen: hmGreen;
+  hmYellow: hmYellow;
+}
+
+.letter{
+  font-weight: 600;
+  color: white;
+  padding: .3em 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0px;
+  width: 1.5em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.A.letter{ background-color: hmBlue}
+.B.letter{ background-color: hmGreen}
+.C.letter{ background-color: hmRed}
+.D.letter{ background-color: hmYellow}

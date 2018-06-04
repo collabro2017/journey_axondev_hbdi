@@ -1,0 +1,6 @@
+
+development:
+  default_user: <%= ENV["DEFAULT_USER"] || "4fae83d9-4b32-4bd0-b304-d50e27269e5a" %>
+
+test:
+  default_user: <%= ENV["DEFAULT_USER"] || "4fae83d9-4b32-4bd0-b304-d50e27269e5a" %>

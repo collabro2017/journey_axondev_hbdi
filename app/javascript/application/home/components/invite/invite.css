@@ -1,0 +1,97 @@
+@import "../../styles.css";
+
+p, button, select {
+  font-size: 1rem;
+  color: black;
+  text-align: left;
+}
+
+.profiles p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.blueBG {
+  background-color: #E4F6FD;
+  border-radius: 3px;
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: left;
+  padding: 0 0 0 10px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.savedProfile {
+  width: 100px;
+  margin: 10px;
+}
+
+.savedProfile img {
+  max-width: 80px;
+  padding-bottom: 10px;
+}
+
+option {
+  width: 150px;
+  border: 1px solid black;
+}
+
+.small {
+  padding: 20px 30px;
+}
+
+hr {
+  clear: both;
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 8px 10px;
+  font-size: 1.1rem;
+  border: 2px solid;
+  border-color: #214263;
+  color: #214263;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  min-width: 130px;
+  text-align: center;
+  margin: 10px 0;
+  clear: both;
+}
+
+button:hover {
+  border-color: #214263;
+  color: white;
+  background-color: #214263;
+}
+
+input {
+  font-family: "Proxima Nova", sans-serif;
+  height: 25px;
+}
+
+.invite {
+  margin: 10px;
+}
+
+.invite p {
+  text-align: center;
+}
+
+.invite input {
+  min-width: 250px;
+}

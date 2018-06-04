@@ -1,0 +1,41 @@
+.noteWrap {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: top;
+}
+
+.bell {
+  margin: 20px 10px 10px 0px;
+  font-size: 2rem;
+  color: #214263;
+}
+
+.notification {
+  background-color: #EEE;
+  margin: 10px 10px 10px 10px;
+  border-radius: 3px;
+}
+
+.notification.new {
+  background-color: #E4F6FD;
+  color: black;
+  margin-top: 20px;
+}
+
+.notification p {
+  font-size: 1rem;
+  padding: 10px;
+  text-align: left;
+}
+
+.small {
+  font-size: 0.7rem;
+  float: right;
+  padding: 5px;
+  margin: 0px;
+}
+
+a {
+  color: inherit;
+    text-decoration: underline;
+}

@@ -1,0 +1,71 @@
+@import './components/announcements/announcements.css';
+@import './components/footer/footer.css';
+@import './components/header/header.css';
+@import './components/results/results.css';
+@import './components/social-bar/social-bar.css';
+@import './components/tile-menu/tile-menu.css';
+
+body {
+  margin: 0 40px;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+  font-weight: 300;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+  background-color: #fff;
+}
+
+
+.tile {
+  border: 1px solid #eff2f5;
+  color: #4e504f;
+  /*border-radius: 3px;*/
+  font-size: 1.1rem;
+  text-align: center;
+  min-height: 100px;
+  grid-column: auto / span 2;
+  box-shadow: 0px 1px 5px 0px rgba(153,153,153,0.4);
+}
+
+.button {
+  padding: 8px 10px;
+  font-size: 1.1rem;
+  border: 2px solid;
+  border-color: #214263;
+  color: #214263;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.button a {
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #214263;
+  color: white;
+}
+
+sup {
+  line-height: 5px;
+}
+
+
+@media only screen and (max-width: 800px)   {
+
+.wrapper {
+   grid-template-columns: auto;
+}
+
+}

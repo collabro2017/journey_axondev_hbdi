@@ -1,0 +1,23 @@
+.tileMenu {
+  background-color: #214263;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  text-align: left;
+  /*border-radius: 3px 3px 0 0 ;*/
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.tileMenu h5 {
+  margin: 0px;
+  font-weight: normal;
+}
+
+/*
+Shows X in top right corner of tile – can be added back in once we are ready for customizable user dashboards
+
+.tile h5::after {
+  content: "X";
+  float: right;
+}*/

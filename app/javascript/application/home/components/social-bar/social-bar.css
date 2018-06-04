@@ -1,0 +1,17 @@
+
+.socialWrapper {
+  padding: 10px 0;
+  font-size: 1.8rem;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.socialIcons {
+  color: #214263;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}

@@ -1,0 +1,14 @@
+connect:
+  build: ./
+  environment:
+    - DATABASE_URL=postgres://{{ pg_user }}:{{ pg_password }}@{{ pg_host }}:5432/axon
+    - SERVICE_NAME=connect
+    - RAILS_ENV=production
+    - SECRET_KEY_BASE= {{ secret_key_base }}
+    - RAILS_RELATIVE_URL_ROOT=/connect
+    - AXON_ENV={{ inventory_file }}
+  working_dir: "/home/app"
+  dns: {{docker_host_ip}}
+  restart: always
+  expose:
+    - "3000"

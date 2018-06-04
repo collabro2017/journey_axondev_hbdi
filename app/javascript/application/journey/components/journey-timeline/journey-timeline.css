@@ -1,0 +1,83 @@
+.small {
+  font-size: 0.7rem;
+  float: right;
+  text-align: right;
+  padding: 0 15px;
+  margin: 0px;
+  clear: both;
+}
+
+.icon {
+  margin-right: 10px;
+  max-width: 60px;
+  margin-left: -51px;
+  background-color: #FFF;
+  border-radius: 100px;
+}
+
+.icon:hover {
+  background-color: #E4F6FD;
+  border-radius: 100px;
+}
+
+.journeyIcon {
+  float: left;
+  max-width: 70px;
+  max-height: 70px;
+  padding: 10px 10px 0 10px;
+}
+
+.bar {
+  width: 95%;
+  max-width: 600px;
+  margin: auto;
+}
+
+h6.small {
+  padding-bottom: 10px;
+}
+
+h4 {
+    text-align: left;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    color: #214263;
+}
+
+h3.journeySubtitle {
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 15px;
+  margin: 0;
+  font-weight: normal;
+  color: #214263;
+}
+
+.event {
+  margin: 5px 0 5px 20px;
+  font-size: 1rem;
+}
+
+.event a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.event svg {
+  padding-bottom: 10px;
+  font-size: 3rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  margin: 5px 10px 5px 60px;
+  border-left: 3px solid grey;
+}
+
+.flexWrap {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}

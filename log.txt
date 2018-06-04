@@ -1,0 +1,161 @@
+Sending build context to Docker daemon  20.29MB
+Step 1/47 : FROM ubuntu:14.04
+ ---> a35e70164dfb
+Step 2/47 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Using cache
+ ---> c3375a026952
+Step 3/47 : RUN locale-gen en_US.UTF-8
+ ---> Using cache
+ ---> 4f2abcaf0c21
+Step 4/47 : ENV LANG       en_US.UTF-8
+ ---> Using cache
+ ---> a1a791137547
+Step 5/47 : ENV LC_ALL     en_US.UTF-8
+ ---> Using cache
+ ---> 1b6e5932e438
+Step 6/47 : RUN dpkg-reconfigure locales
+ ---> Using cache
+ ---> ae6ea51dd0cf
+Step 7/47 : RUN apt-get update -qq &&     apt-get install -y -qq       build-essential       ca-certificates       curl       libcurl4-openssl-dev       libffi-dev       libgdbm-dev       libpq-dev       libreadline6-dev       libssl-dev       libtool       libxml2-dev       libxslt-dev       libyaml-dev       postgresql-client       software-properties-common       wget       git       libsqlite3-dev       sqlite3       zlib1g-dev       libpq-dev       imagemagick       libmagickwand-dev       ghostscript       npm       xvfb       libgtk2.0-0       libnotify-bin       libgconf-2-4       libnss3       libxss1
+ ---> Using cache
+ ---> d4813070d5be
+Step 8/47 : RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C3173AA6
+ ---> Using cache
+ ---> fd40ed8b641b
+Step 9/47 : RUN echo deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main > /etc/apt/sources.list.d/brightbox.list
+ ---> Using cache
+ ---> dff2a8db10bc
+Step 10/47 : RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
+ ---> Using cache
+ ---> d626766d258b
+Step 11/47 : RUN apt-get install -y nodejs
+ ---> Using cache
+ ---> 16b4ebdcf47f
+Step 12/47 : RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+ ---> Using cache
+ ---> 0dbd386b9a86
+Step 13/47 : RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+ ---> Using cache
+ ---> 98a045909dde
+Step 14/47 : RUN curl -sS https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+ ---> Using cache
+ ---> c338df07b3f6
+Step 15/47 : RUN add-apt-repository 'deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main'
+ ---> Using cache
+ ---> 10e1bebe03a3
+Step 16/47 : RUN apt-get update && apt-get install -y ruby2.5 ruby2.5-dev nodejs yarn postgresql-client-10
+ ---> Using cache
+ ---> 5b72e4568e4e
+Step 17/47 : RUN gem2.5 install rake bundler --no-rdoc --no-ri
+ ---> Using cache
+ ---> 623bfda5da5e
+Step 18/47 : RUN gem2.5 install rake foreman --no-rdoc --no-ri
+ ---> Using cache
+ ---> e6d6a3b05835
+Step 19/47 : RUN echo "gem: --no-ri --no-rdoc" > /etc/gemrc
+ ---> Using cache
+ ---> 34ea054d6853
+Step 20/47 : RUN mkdir /home/app
+ ---> Using cache
+ ---> 482b59cd010f
+Step 21/47 : RUN groupadd -r app -g 433 && useradd -u 431 -r -g app -d /home/app -s /sbin/nologin -c "Docker image user" app && chown -R app:app /home/app
+ ---> Using cache
+ ---> d9af04ace002
+Step 22/47 : RUN  echo "    IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
+ ---> Using cache
+ ---> a2b9e18c86d1
+Step 23/47 : WORKDIR /home/app
+ ---> Using cache
+ ---> b33784430917
+Step 24/47 : ADD Gemfile /home/app/
+ ---> Using cache
+ ---> 615e43f5340f
+Step 25/47 : ADD Gemfile.lock /home/app/
+ ---> Using cache
+ ---> d0ab1d28eace
+Step 26/47 : RUN chown -R app:app /home/app
+ ---> Using cache
+ ---> c00b503e44c9
+Step 27/47 : ADD deploy_key_rsa /home/app/.ssh/id_rsa
+ ---> Using cache
+ ---> 78b7f0c41196
+Step 28/47 : ADD known_hosts /home/app/.ssh/known_hosts
+ ---> Using cache
+ ---> 5741940d918d
+Step 29/47 : RUN chmod 600 /home/app/.ssh/*
+ ---> Using cache
+ ---> d8a4cf08dfa0
+Step 30/47 : RUN chown -R app:app /home/app
+ ---> Using cache
+ ---> e8f639bb211b
+Step 31/47 : RUN chown -R app:app /home/app/.ssh
+ ---> Using cache
+ ---> 35f96f951b2d
+Step 32/47 : USER app
+ ---> Using cache
+ ---> 45f0fd332233
+Step 33/47 : ENV HOME /home/app
+ ---> Using cache
+ ---> 44753b8ed0d3
+Step 34/47 : RUN bundle config frozen 1
+ ---> Using cache
+ ---> a3321015a3a8
+Step 35/47 : RUN bundle install --deployment
+ ---> Using cache
+ ---> aa2043a11dea
+Step 36/47 : USER root
+ ---> Using cache
+ ---> 69a8805a60db
+Step 37/47 : ADD . /home/app
+ ---> 66c28f1a54a4
+Step 38/47 : RUN chown -R app:app /home/app
+ ---> Running in 5bf52dd186a6
+Removing intermediate container 5bf52dd186a6
+ ---> f2f69ecb10fa
+Step 39/47 : USER app
+ ---> Running in 8b26355c5125
+Removing intermediate container 8b26355c5125
+ ---> 2a0383363ba3
+Step 40/47 : RUN yarn install
+ ---> Running in 5895f3e20c53
+yarn install v1.5.1
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@1.1.3: The platform "linux" is incompatible with this module.
+info "fsevents@1.1.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[91mwarning "@rails/webpacker > postcss-cssnext@3.1.0" has unmet peer dependency "caniuse-lite@^1.0.30000697".
+[0m[91mwarning " > axon-brand@1.0.0" has incorrect peer dependency "react@^15.0.1".
+[0m[91mwarning " > babel-loader@8.0.0-beta.2" has unmet peer dependency "webpack@>=2".
+[0m[91mwarning " > webpack-cli@2.0.10" has unmet peer dependency "webpack@^4.0.0-beta.1".
+[0m[91mwarning " > webpack-dev-server@2.11.2" has unmet peer dependency "webpack@^2.2.0 || ^3.0.0".
+[0m[91mwarning "webpack-dev-server > webpack-dev-middleware@1.12.2" has unmet peer dependency "webpack@^1.0.0 || ^2.0.0 || ^3.0.0".
+[0m[4/4] Building fresh packages...
+Done in 37.93s.
+Removing intermediate container 5895f3e20c53
+ ---> 5ab00b06519b
+Step 41/47 : RUN NO_DB=1 RAILS_ENV=production SECRET_KEY_BASE=secret bundle exec rake assets:precompile
+ ---> Running in 76ca849fed12
+yarn install v1.5.1
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 0.87s.
+Webpacker is installed 🎉 🍰
+Using /home/app/config/webpacker.yml file for setting up webpack paths
+Compiling…
+Compiled all packs in /home/app/public/packs
+Removing intermediate container 76ca849fed12
+ ---> 143d0b223c45
+Step 42/47 : USER root
+ ---> Running in 799b6a0df215
+Removing intermediate container 799b6a0df215
+ ---> bc812771ac89
+Step 43/47 : RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ ---> Running in 4cb5aae15344
+Removing intermediate container 4cb5aae15344
+ ---> c24bb93a0a84
+Step 44/47 : RUN chmod a+x docker-start.sh ci/test.sh
+ ---> Running in cfffca258c16
+[91mchmod: cannot access 'docker-start.sh': No such file or directory
+chmod: cannot access 'ci/test.sh': No such file or directory
+[0m

@@ -1,0 +1,49 @@
+default_thinker:
+  name: default_thinker
+  uuid: <%= uuid('default_thinker') %>
+  email: default_thinker@example.com
+
+models/connections/filtered_for_user/ned_herrmann:
+  name: Ned Herrmann
+  uuid: <%= uuid('models/connections/filtered_for_user/ned_herrmann') %>
+  email: models/connections/filtered_for_user/ned_herrmann@hbdi.com
+
+models/connections/filtered_for_user/john_doe:
+  name: John Doe
+  uuid: <%= uuid('models/connections/filtered_for_user/john_doe') %>
+  email: models/connections/filtered_for_user/john.doe@hbdi.com
+
+models/connections/filtered_for_user/susie_q:
+  name: Susie Q
+  uuid: <%= uuid('models/connections/filtered_for_user/susie_q') %>
+  email: models/connections/filtered_for_user/susie.q@example.com
+
+models/connection_events/events/create/john_doe:
+  name: John Doe
+  uuid: <%= uuid('models/connection_events/events/create/john_doe') %>
+  email: models/connection_events/events/create/john.doe@example.com
+
+models/connection_events/events/create/ned_herrmann:
+  name: John Doe
+  uuid: <%= uuid('models/connection_events/events/create/ned_herrmann') %>
+  email: models/connection_events/events/create/ned_herrmann.doe@example.com
+
+models/connection/events/create/susie_q:
+  name: susie_q
+  uuid: <%= uuid('models/connection/events/create/susie_q') %>
+  email: models/connection/events/create/susie_q@hbdi.com
+
+models/connection/events/create/ned_herrmann:
+  name: Ned Herrmann
+  uuid: <%= uuid('models/connection/events/create/ned_herrmann') %>
+  email: models/connection/events/create/ned_herrmann@hbdi.com
+
+controllers/connections/ned_herrmann:
+  name: Ned Herrmann
+  uuid: <%= uuid('controllers/connections/ned_herrmann') %>
+  email: controllers/connections/ned_herrmann@hbdi.com
+
+controllers/connections/john_doe:
+  name: John Doe
+  uuid: <%= uuid('controllers/connections/john_doe') %>
+  email: controllers/connections/john.doe@hbdi.com

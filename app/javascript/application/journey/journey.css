@@ -1,0 +1,87 @@
+
+
+.flexHeader {
+  display: flex;
+  align-items: center;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  max-width: 800px;
+}
+
+.small {
+  font-size: 0.7rem;
+  float: right;
+  text-align: right;
+  padding: 0 15px;
+  margin: 0px;
+  clear: both;
+}
+
+.wrapper .small {
+  float: left;
+  text-align: left;
+  clear: none;
+}
+
+.wrapper p {
+  text-align: left;
+}
+
+.next {
+  background-color: #E4F6FD;
+  border-radius: 0 5px 5px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.journeyIcon {
+  float: left;
+  max-width: 70px;
+  max-height: 70px;
+  padding: 10px;
+}
+
+.journeyIconSubpage {
+  float: left;
+  max-width: 50px;
+  padding: 0px 20px 30px 20px;
+}
+
+.wrapper p {
+  float: left;
+}
+
+.icon {
+  margin-right: 10px;
+  max-width: 60px;
+  float: left;
+  margin-left: -51px;
+  background-color: #FFF;
+  border-radius: 100px;
+}
+
+.icon:hover {
+  background-color: #E4F6FD;
+  border-radius: 100px;
+}
+
+.next .icon:hover {
+  background-color: #FFF;
+  border-radius: 100px;
+}
+
+#progress {
+    background: #FFF;
+    border: 2px solid #214263;
+    height: 8px;
+    padding: 0px;
+    margin: 10px;
+    max-width: 790px;
+    clear: both;
+}

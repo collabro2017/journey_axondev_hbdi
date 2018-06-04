@@ -1,0 +1,16 @@
+axon:
+  container_name: connect
+  image: 246000647945.dkr.ecr.us-west-2.amazonaws.com/axon/connect:{{ci_branch}}
+  environment:
+    - RAILS_ENV=production
+    - VIRTUAL_HOST=journey.{{ host }}
+    - DATABASE_URL=postgres://{{ pg_user }}:{{ pg_password }}@{{ pg_host }}:{{ pg_port }}/axon
+    - SERVICE_NAME=connect
+    - SECRET_KEY_BASE= {{ secret_key_base }}
+    - RAILS_RELATIVE_URL_ROOT=/connect
+    - RAILS_LOG_TO_STDOUT=yes
+  working_dir: "/home/app"
+  dns: {{docker_host_ip}}
+  restart: always
+  expose:
+    - "3000"

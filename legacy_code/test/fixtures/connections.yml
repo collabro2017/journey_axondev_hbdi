@@ -1,0 +1,43 @@
+models/connections/filtered_for_user/active_connection:
+  status: active
+  uuid: 3fbc4901-0030-49a8-a1b8-4767461873cd
+  invited_email_address: john.doe@example.com
+
+models/connections/filtered_for_user/pending_connection:
+  status: active
+  uuid: 3fbc4901-0030-49a8-a1b8-4767461873cd
+  invited_email_address: susie.q@example.com
+
+# This connection shouldn't be returned since it doesn't include the user we
+# are testing with (ned_herrmann)
+models/connections/filtered_for_user/not_returned_connection:
+  status: active
+  uuid: 3fbc4901-0030-49a8-a1b8-4767461873cd
+  invited_email_address: john.doe@example.com
+
+models/connection_events/events/create/pending_connection:
+  status: pending
+  uuid: <%= uuid('models/connection_events/events/create/pending_connection') %>
+  invited_email_address: models/connection_events/events/create/pending_connection/john.doe@example.com
+  initiated_by_id: <%= uuid('models/connection_events/events/create/ned_herrmann') %>
+  initiated_by_type: 'Thinker'
+
+controllers/connections/visible_connection:
+  status: active
+  uuid: <%= uuid('controllers/connections/visible_connection') %>
+  invited_email_address: controllers/connections/visible_connection/john.doe@example.com
+
+controllers/connections/not_visible_connection:
+  status: active
+  uuid: <%= uuid('controllers/connections/not_visible_connection') %>
+  invited_email_address: controllers/connections/not_visible_connection/test@example.com
+
+controllers/connections/visible_connection:
+  status: active
+  uuid: <%= uuid('controllers/connections/visible_connection') %>
+  invited_email_address: controllers/connections/visible_connection/john.doe@example.com
+
+controllers/connections/not_visible_connection:
+  status: active
+  uuid: <%= uuid('controllers/connections/not_visible_connection') %>
+  invited_email_address: controllers/connections/not_visible_connection/test@example.com

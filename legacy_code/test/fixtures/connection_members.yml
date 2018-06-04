@@ -1,0 +1,60 @@
+# models/connections/filtered_for_user/active_connection.connection_members
+models/connections/filtered_for_user/active_connection.connection_members[ned_herrmann]:
+  member_id: <%= uuid('models/connections/filtered_for_user/ned_herrmann') %>
+  member_type: Thinker
+  connection: models/connections/filtered_for_user/active_connection
+
+models/connections/filtered_for_user/active_connection.connection_members[john_doe]:
+  member_id: <%= uuid('models/connections/filtered_for_user/john_doe') %>
+  member_type: Thinker
+  connection: models/connections/filtered_for_user/active_connection
+
+# models/connections/filtered_for_user/pending_connection.connection_members
+models/connections/filtered_for_user/pending_connection.connection_members[ned_herrmann]:
+  member_id: <%= uuid('models/connections/filtered_for_user/ned_herrmann') %>
+  member_type: Thinker
+  connection: models/connections/filtered_for_user/pending_connection
+
+models/connections/filtered_for_user/pending_connection.connection_members[susie_q]:
+  member_id: <%= uuid('models/connections/filtered_for_user/susie_q') %>
+  member_type: Thinker
+  connection: models/connections/filtered_for_user/pending_connection
+
+# models/connections/filtered_for_user/not_returned_connection.connection_members
+models/connections/filtered_for_user/not_returned_connection.connection_members[susie_q]:
+  member_id: <%= uuid('models/connections/filtered_for_user/susie_q') %>
+  member_type: Thinker
+  connection: models/connections/filtered_for_user/not_returned_connection
+
+models/connections/filtered_for_user/not_returned_connection.connection_members[john_doe]:
+  member_id: <%= uuid('models/connections/filtered_for_user/john_doe') %>
+  member_type: Thinker
+  connection: models/connections/filtered_for_user/not_returned_connection
+
+# models/connection_events/events/create/pending_connection.connection_members
+models/connection_events/events/create/pending_connection.connection_members[ned_herrmann]:
+  member_id: <%= uuid('models/connection_events/events/create/ned_herrmann') %>
+  member_type: Thinker
+  connection: models/connection_events/events/create/pending_connection
+
+models/connection_events/events/create/pending_connection.connection_members[john_doe]:
+  member_id: <%= uuid('models/connection_events/events/create/john_doe') %>
+  member_type: Thinker
+  connection: models/connection_events/events/create/pending_connection
+
+# controllers/connections/visible_connection
+controllers/connections/visible_connection.connection_members[ned_herrmann]:
+  member_id: <%= uuid('controllers/connections/ned_herrmann') %>
+  member_type: Thinker
+  connection: controllers/connections/visible_connection
+
+controllers/connections/visible_connection.connection_members[john_doe]:
+  member_id: <%= uuid('controllers/connections/john_doe') %>
+  member_type: Thinker
+  connection: controllers/connections/visible_connection
+
+# controllers/connections/not_visible_connection
+controllers/connections/not_visible_connection.connection_members[ned_herrmann]:
+  member_id: <%= uuid('default_thinker') %>
+  member_type: Thinker
+  connection: controllers/connections/not_visible_connection

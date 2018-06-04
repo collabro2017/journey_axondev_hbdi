@@ -1,0 +1,41 @@
+
+.grey {
+  filter: grayscale(100%);
+}
+
+.blur {
+  opacity: 0.5;
+  filter: blur(8px);
+}
+
+.results {
+  grid-column: auto / span 2;
+  grid-row: auto / span 3;
+  min-height: 500px;
+  background-color: FFF;
+  text-align: center;
+}
+
+.results h4 {
+  font-size: 1.5rem;
+
+  text-align: center;
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+.resultsMap {
+  font-size: 1rem;
+  padding: 30px;
+  margin: 30px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+.button {
+  text-align: center;
+}

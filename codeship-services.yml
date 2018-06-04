@@ -1,0 +1,27 @@
+connect:
+  build:
+    image: 246000647945.dkr.ecr.us-west-2.amazonaws.com/axon/connect
+    dockerfile_path: Dockerfile
+  depends_on:
+    - postgres
+  environment:
+    - RAILS_ENV=test
+    - DATABASE_URL=postgres://postgres@postgres/axon
+  working_dir: "/home/app"
+  cached: true
+  dockercfg_service: awsGenerator
+postgres:
+   image: 'healthcheck/postgres:alpine'
+   command: -c fsync=off
+awsGenerator:
+  image: codeship/aws-ecr-dockercfg-generator
+  encrypted_env_file: aws_creds.encrypted # contains Secret, AccessKey and Region
+  add_docker: true
+deployment:
+  image: 246000647945.dkr.ecr.us-west-2.amazonaws.com/axon/provisioning
+  encrypted_env_file: aws_creds.encrypted # contains Secret, AccessKey and Region
+  dockercfg_service: awsGenerator
+  environment:
+    - TARGET=deliver
+    - PROJECT_NAME=connect
+    - REPO=git@bitbucket.org:axondev/axon-connect.git
